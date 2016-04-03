@@ -1,0 +1,3 @@
+rootProject.name = 'TabNavigatorTest'
+
+include ':app'
