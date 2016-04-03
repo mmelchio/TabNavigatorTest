@@ -24,27 +24,27 @@ class TabNavigatorTest extends Component {
         <Text style={styles.instructions}>
           Shake or press menu button for dev menu
         </Text>
+        <TabNavigator>
+          <TabNavigator.Item
+            selected={this.state.selectedTab === 'home'}
+            title="Home"
+            renderIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
+            renderSelectedIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
+            badgeText="1"
+            onPress={() => this.setState({ selectedTab: 'home' })}>
+            {homeView}
+          </TabNavigator.Item>
+          <TabNavigator.Item
+            selected={this.state.selectedTab === 'profile'}
+            title="Profile"
+            renderIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
+            renderSelectedIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
+            renderBadge={() => <CustomBadgeView />}
+            onPress={() => this.setState({ selectedTab: 'profile' })}>
+            {profileView}
+          </TabNavigator.Item>
+        </TabNavigator>
       </View>
-      <TabNavigator>
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'home'}
-          title="Home"
-          renderIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
-          renderSelectedIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
-          badgeText="1"
-          onPress={() => this.setState({ selectedTab: 'home' })}>
-          {homeView}
-        </TabNavigator.Item>
-        <TabNavigator.Item
-          selected={this.state.selectedTab === 'profile'}
-          title="Profile"
-          renderIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
-          renderSelectedIcon={() => <Image source={uri: {'https://facebook.github.io/react/img/logo_og.png'}} />}
-          renderBadge={() => <CustomBadgeView />}
-          onPress={() => this.setState({ selectedTab: 'profile' })}>
-          {profileView}
-        </TabNavigator.Item>
-    </TabNavigator>
     );
   }
 }
